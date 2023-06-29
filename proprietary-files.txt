@@ -2245,3 +2245,4 @@ lib64/libsfplugin_ccodec_utils.so
 #lib64/libstagefright_codecbase.so
 #lib64/libvcodec_cap.so
 #lib64/libvcodec_capenc.so
+vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
