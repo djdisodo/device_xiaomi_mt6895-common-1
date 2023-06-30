@@ -2204,7 +2204,7 @@ vendor/etc/wifi/passpointProfile.conf
 vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
-# Codec (Pro Dev Attempt)
+# Shitz
 #vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/media_codecs_mediatek_video.xml
 #vendor/etc/media_codecs.xml
@@ -2245,3 +2245,4 @@ lib64/libsfplugin_ccodec_utils.so
 #lib64/libstagefright_codecbase.so
 #lib64/libvcodec_cap.so
 #lib64/libvcodec_capenc.so
+vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
