@@ -78,6 +78,9 @@ PRODUCT_PACKAGES += \
     libtinycompress.vendor
 
 PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.0 \
+    android.hardware.soundtrigger@2.1 \
+    android.hardware.soundtrigger@2.2
     MtkInCallService
 
 PRODUCT_COPY_FILES += \
