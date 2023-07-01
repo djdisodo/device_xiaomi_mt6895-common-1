@@ -249,9 +249,14 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_hidl_plugin.vendor \
+    libcodec2_soft_common.vendor
+	libstagefright_amrnb_common.vendor \
+    libstagefright_bufferpool@2.0.1.vendor \
+    libstagefright_enc_common.vendor \
+    libstagefright_flacdec.vendor \
+	libstagefright_foundation.vendor \
     libstagefright_softomx_plugin.vendor \
     libsfplugin_ccodec_utils.vendor \
-    libcodec2_soft_common.vendor
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -263,14 +268,10 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs_mediatek_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_audio.xml \
     $(COMMON_PATH)/configs/media/media_codecs_mediatek_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_video.xml \
 
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
-
-# Media Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
-    libsfplugin_ccodec
+    libsfplugin_ccodec \
+	android.hardware.media.omx@1.0-service
 
 # Minijail
 PRODUCT_PACKAGES += \
