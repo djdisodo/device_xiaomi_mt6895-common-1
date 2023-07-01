@@ -45,7 +45,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service.mediatek \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio@7.0.vendor \
@@ -74,8 +73,7 @@ PRODUCT_PACKAGES += \
     libalsautils \
     libnbaio_mono \
     libaudiofoundation \
-    libaudiofoundation.vendor \
-    libtinycompress.vendor
+    libaudiofoundation.vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.0 \
