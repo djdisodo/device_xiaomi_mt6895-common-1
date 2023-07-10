@@ -27,4 +27,5 @@ cc_library_shared {
         "libmedia_headers",
         "libmediametrics_headers",
     ],
+    //vendor: true
 }

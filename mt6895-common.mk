@@ -16,9 +16,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
 
-# GApps
-$(call inherit-product-if-exists, vendor/gapps/basic/config.mk)
-
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -42,6 +39,8 @@ PRODUCT_PACKAGES += \
 
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
+
+COMMON_PATH := $(LOCAL_PATH)
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -100,7 +99,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbluetooth_audio_session.vendor \
+    libbluetooth_audio_session \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio@2.0-impl \
@@ -147,13 +146,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
     libdrm.vendor \
     libvulkan
-
-# GPU governor
-PRODUCT_PACKAGES += \
-    gpu-fas.sh
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/gpu-fas:$(TARGET_COPY_OUT_VENDOR)/bin/gpu-fas
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -219,9 +211,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     libshim_vtservice
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
-
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster4.vendor:64 \
@@ -248,38 +237,24 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.0.vendor \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
-    libcodec2_hidl_plugin.vendor \
-    libcodec2_soft_common.vendor
-	libstagefright_amrnb_common.vendor \
+    libcodec2_hidl_plugin \
+    libcodec2_soft_common.vendor \
+    libstagefright_amrnb_common.vendor \
     libstagefright_bufferpool@2.0.1.vendor \
     libstagefright_enc_common.vendor \
     libstagefright_flacdec.vendor \
-	libstagefright_foundation.vendor \
+    libstagefright_foundation.vendor \
     libstagefright_softomx_plugin.vendor \
-    libsfplugin_ccodec_utils.vendor \
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(COMMON_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/media/media_codecs_mediatek_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_audio.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_mediatek_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_video.xml \
+    libsfplugin_ccodec_utils.vendor
 
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
     libsfplugin_ccodec \
-	android.hardware.media.omx@1.0-service
+    android.hardware.media.omx@1.0-service
 
 # Minijail
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor
-
-# MIUI Camera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicamera.xml
 
 # MtkInCallService
 PRODUCT_PACKAGES += \
@@ -499,11 +474,8 @@ BOARD_API_LEVEL := 31
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
     $(DEVICE_PATH) \
+    $(LOCAL_PATH) \
     hardware/mediatek
-
-# Sysconfig
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sysconfig/hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist.xml
 
 # Vendor service
 PRODUCT_PACKAGES += \

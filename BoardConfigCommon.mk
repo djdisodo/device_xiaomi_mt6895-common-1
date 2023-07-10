@@ -5,6 +5,7 @@
 #
 
 BOARD_VENDOR := xiaomi
+BOARD_HAS_MTK_HARDWARE := true
 COMMON_PATH := device/xiaomi/mt6895-common
 
 BUILD_BROKEN_DUP_RULES := true
@@ -136,7 +137,6 @@ BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 104857600
 TARGET_BOARD_PLATFORM := mt6895
 
 # Properties
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
@@ -157,7 +157,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2022-12-01
+VENDOR_SECURITY_PATCH := 2023-04-01
 
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
