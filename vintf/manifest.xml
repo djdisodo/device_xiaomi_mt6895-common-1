@@ -1,3 +1,40 @@
+<!--
+    Input:
+        manifest_sensor_hidl_v2.xml
+        manifest_audio.xml
+        manifest_dsds.xml
+        manifest_radioconfig.xml
+        manifest_em.xml
+        manifest_videotelephony.xml
+        manifest_ir.xml
+        manifest_tee.xml
+        manifest_log.xml
+        manifest_mdmonitor.xml
+        manifest_aee.xml
+        manifest_boot.xml
+        manifest_netdagent.xml
+        manifest_tetheroffloadservice.xml
+        manifest_pq.xml
+        manifest_mmservice.xml
+        manifest_mmagent.xml
+        manifest_dmc.xml
+        manifest_apmonitor.xml
+        manifest_nwk_opt.xml
+        manifest_composer.xml
+        manifest_cameraprovider.xml
+        manifest_target_level_s.xml
+        manifest.xml
+        manifest_nfc.xml
+        manifest_eSE.xml
+        manifest_vendor.xiaomi.hardware.mlipay.xml
+        manifest_vendor.xiaomi.hardware.mtdservice.xml
+        manifest_vendor.xiaomi.hardware.tidaservice.xml
+        manifest_vendor.xiaomi.hardware.vsimapp.xml
+        manifest_vendor.xiaomi.hardware.mfidoca.xml
+        manifest_displayfeature.xml
+        manifest.xml
+        manifest.xml
+-->
 <manifest version="4.0" type="device" target-level="6">
     <hal format="hidl">
         <name>android.hardware.audio</name>
@@ -541,16 +578,6 @@
         <fqname>@2.0::INqNfc/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.sla.service</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISlaService</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISlaService/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.xiaomi.hardware.displayfeature</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -610,4 +637,28 @@
         </interface>
         <fqname>@1.0::IVSIMService/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hidl.minet</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMiNetService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IMiNetService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hidl.miwill</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMiwillService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IMiwillService/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>31.0</version>
+    </sepolicy>
+    <kernel target-level="6"/>
 </manifest>

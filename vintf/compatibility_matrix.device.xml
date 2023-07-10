@@ -1,9 +1,61 @@
+<!--
+    Input:
+        device_framework_matrix.xml
+        nfc_compatibility_matrix.xml
+        vendor.xiaomi.sensor.citsensorservice@1.1_compatibility_matrix.xml
+        vendor.xiaomi.sensor.communicate@1.0_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        capacitance_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        fod_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        compatibility_matrix_displayfeature.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor_framework_compatibility_matrix.xml
+        vendor.xiaomi.cit.wifi@1.0_compatibility_matrix.xml
+-->
 <compatibility-matrix version="5.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>android.hardware.bluetooth.audio</name>
+        <version>2.0</version>
+        <version>2.1</version>
+        <interface>
+            <name>IBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.camera.provider</name>
         <interface>
             <name>ICameraProvider</name>
             <instance>internal/0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.drm</name>
+        <version>1.0-4</version>
+        <interface>
+            <name>ICryptoFactory</name>
+            <instance>widevine</instance>
+            <instance>clearkey</instance>
+            <instance>wfdhdcp</instance>
+        </interface>
+        <interface>
+            <name>IDrmFactory</name>
+            <instance>widevine</instance>
+            <instance>clearkey</instance>
+            <instance>wfdhdcp</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -21,6 +73,11 @@
             <name>INfc</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.power</name>
+        <version>3</version>
+        <fqname>IPower/default</fqname>
     </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.radio</name>
@@ -152,11 +209,12 @@
             <instance>slot4</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.vibrator</name>
-        <version>1-2</version>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.wifi</name>
+        <transport>hwbinder</transport>
+        <version>1.0-6</version>
         <interface>
-            <name>IVibrator</name>
+            <name>IWifi</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -1062,6 +1120,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.misys</name>
+        <version>4.0</version>
+        <interface>
+            <name>IMiSys</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.xiaomi.hardware.mlipay</name>
         <version>1.0-1</version>
         <interface>
@@ -1141,4 +1207,16 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <sepolicy>
+        <kernel-sepolicy-version>30</kernel-sepolicy-version>
+        <sepolicy-version>28.0</sepolicy-version>
+        <sepolicy-version>29.0</sepolicy-version>
+        <sepolicy-version>30.0</sepolicy-version>
+        <sepolicy-version>31.0</sepolicy-version>
+        <sepolicy-version>32.0</sepolicy-version>
+        <sepolicy-version>33.0</sepolicy-version>
+    </sepolicy>
+    <avb>
+        <vbmeta-version>1.0</vbmeta-version>
+    </avb>
 </compatibility-matrix>
